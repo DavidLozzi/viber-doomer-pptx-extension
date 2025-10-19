@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Viber vs Doomer Control Panel</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+    <script src="common.js"></script>
+    <script defer src="taskpane.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1>Viber vs Doomer Controls</h1>
+      <section class="notice" id="status"></section>
+      <section>
+        <h2>Presentation Settings</h2>
+        <label for="presentation-id">Presentation ID</label>
+        <input id="presentation-id" type="text" />
+        <button id="save-presentation">Save Presentation</button>
+        <button id="refresh-presentation" class="secondary">Fetch Metadata</button>
+        <div id="presentation-meta" class="notice" style="display:none;"></div>
+      </section>
+      <section>
+        <h2>Slide Mapping</h2>
+        <p id="slide-context" class="notice"></p>
+        <label for="slide-id">Slide ID Override</label>
+        <input id="slide-id" type="text" placeholder="e.g. slide-3" />
+        <label for="survey-id">Survey ID (optional)</label>
+        <input id="survey-id" type="text" placeholder="Defaults to slide ID" />
+        <button id="save-slide">Save Mapping for Slide</button>
+        <button id="delete-slide" class="secondary">Remove Mapping</button>
+      </section>
+      <section>
+        <h2>Configured Slides</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Slide</th>
+              <th>Slide ID</th>
+              <th>Survey ID</th>
+            </tr>
+          </thead>
+          <tbody id="slide-table"></tbody>
+        </table>
+      </section>
+    </main>
+  </body>
+</html>

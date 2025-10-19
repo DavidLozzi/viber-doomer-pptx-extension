@@ -1,0 +1,19 @@
+{
+  "name": "viber-doomer-pptx-extension",
+  "version": "1.0.0",
+  "description": "PowerPoint add-in that syncs slides with the Agentic Feedback app and renders live survey results.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "start:http": "node server.js"
+  },
+  "keywords": [
+    "office",
+    "powerpoint",
+    "addin",
+    "live-results"
+  ],
+  "author": "Agentic Engineering",
+  "license": "MIT",
+  "type": "commonjs"
+}
