@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+           xsi:type="TaskPaneApp">
+  <Id>f4a4d9e4-b6db-4b6b-a3b6-3416c2015410</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Agentic Engineering</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="Viber vs Doomer Live Feedback" />
+  <Description DefaultValue="Synchronize slides and show live results from the Agentic Feedback API." />
+  <IconUrl DefaultValue="https://via.placeholder.com/128" />
+  <HighResolutionIconUrl DefaultValue="https://via.placeholder.com/128" />
+  <SupportUrl DefaultValue="https://agenticfeedback.app" />
+  <AppDomains>
+    <AppDomain>https://api.agenticfeedback.app</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Presentation" />
+  </Hosts>
+  <Requirements>
+    <Sets>
+      <Set Name="PowerPointApi" MinVersion="1.4" />
+    </Sets>
+  </Requirements>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://localhost:3000/taskpane.html" />
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+  <VersionOverrides xsi:type="ov:VersionOverrides" Version="1.0">
+    <ov:Hosts>
+      <ov:Host xsi:type="ov:Presentation">
+        <ov:DesktopFormFactor>
+          <ov:GetStarted>
+            <ov:Title resid="GetStarted.Title" />
+            <ov:Description resid="GetStarted.Description" />
+            <ov:LearnMoreUrl resid="GetStarted.LearnMoreUrl" />
+          </ov:GetStarted>
+          <ov:FunctionFile resid="Commands.Url" />
+          <ov:ExtensionPoint xsi:type="ov:PrimaryCommandSurface">
+            <ov:OfficeTab id="TabHome">
+              <ov:Group id="CustomGroup" label="Viber vs Doomer">
+                <ov:Label resid="Commands.GroupLabel" />
+                <ov:Control xsi:type="ov:Button" id="InsertLiveResults">
+                  <ov:Label resid="Commands.InsertLabel" />
+                  <ov:Supertip>
+                    <ov:Title resid="Commands.InsertLabel" />
+                    <ov:Description resid="Commands.InsertDescription" />
+                  </ov:Supertip>
+                  <ov:Icon>
+                    <ov:bt:Image size="16" resid="Icon.16x16" />
+                    <ov:bt:Image size="32" resid="Icon.32x32" />
+                    <ov:bt:Image size="80" resid="Icon.80x80" />
+                  </ov:Icon>
+                  <ov:Action xsi:type="ov:ExecuteFunction">
+                    <ov:FunctionName>insertLiveResultsControl</ov:FunctionName>
+                  </ov:Action>
+                </ov:Control>
+                <ov:Control xsi:type="ov:Button" id="OpenSettings">
+                  <ov:Label resid="Commands.ConfigureLabel" />
+                  <ov:Supertip>
+                    <ov:Title resid="Commands.ConfigureLabel" />
+                    <ov:Description resid="Commands.ConfigureDescription" />
+                  </ov:Supertip>
+                  <ov:Icon>
+                    <ov:bt:Image size="16" resid="Icon.16x16" />
+                    <ov:bt:Image size="32" resid="Icon.32x32" />
+                    <ov:bt:Image size="80" resid="Icon.80x80" />
+                  </ov:Icon>
+                  <ov:Action xsi:type="ov:ShowTaskpane">
+                    <ov:SourceLocation resid="Taskpane.Url" />
+                  </ov:Action>
+                </ov:Control>
+                <ov:Control xsi:type="ov:Button" id="RefreshAll">
+                  <ov:Label resid="Commands.RefreshLabel" />
+                  <ov:Supertip>
+                    <ov:Title resid="Commands.RefreshLabel" />
+                    <ov:Description resid="Commands.RefreshDescription" />
+                  </ov:Supertip>
+                  <ov:Icon>
+                    <ov:bt:Image size="16" resid="Icon.16x16" />
+                    <ov:bt:Image size="32" resid="Icon.32x32" />
+                    <ov:bt:Image size="80" resid="Icon.80x80" />
+                  </ov:Icon>
+                  <ov:Action xsi:type="ov:ExecuteFunction">
+                    <ov:FunctionName>refreshAllData</ov:FunctionName>
+                  </ov:Action>
+                </ov:Control>
+              </ov:Group>
+            </ov:OfficeTab>
+          </ov:ExtensionPoint>
+          <ov:ExtensionPoint xsi:type="ov:CustomPane">
+            <ov:SourceLocation resid="Taskpane.Url" />
+            <ov:Title resid="Taskpane.Title" />
+          </ov:ExtensionPoint>
+          <ov:ExtensionPoint xsi:type="ov:Content">
+            <ov:SourceLocation resid="Content.Url" />
+            <ov:RequestedHeight>400</ov:RequestedHeight>
+            <ov:RequestedWidth>600</ov:RequestedWidth>
+          </ov:ExtensionPoint>
+        </ov:DesktopFormFactor>
+      </ov:Host>
+    </ov:Hosts>
+    <ov:Resources>
+      <ov:bt:Images>
+        <ov:bt:Image id="Icon.16x16" DefaultValue="https://via.placeholder.com/16" />
+        <ov:bt:Image id="Icon.32x32" DefaultValue="https://via.placeholder.com/32" />
+        <ov:bt:Image id="Icon.80x80" DefaultValue="https://via.placeholder.com/80" />
+      </ov:bt:Images>
+      <ov:Urls>
+        <ov:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
+        <ov:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html" />
+        <ov:Url id="Content.Url" DefaultValue="https://localhost:3000/content.html" />
+      </ov:Urls>
+      <ov:ShortStrings>
+        <ov:String id="Commands.GroupLabel" DefaultValue="Feedback" />
+        <ov:String id="Commands.InsertLabel" DefaultValue="Insert Live Results" />
+        <ov:String id="Commands.ConfigureLabel" DefaultValue="Configure Slide Mapping" />
+        <ov:String id="Commands.RefreshLabel" DefaultValue="Refresh All Data" />
+        <ov:String id="Taskpane.Title" DefaultValue="Viber vs Doomer" />
+        <ov:String id="GetStarted.Title" DefaultValue="Get Started" />
+      </ov:ShortStrings>
+      <ov:LongStrings>
+        <ov:String id="Commands.InsertDescription" DefaultValue="Add a live results placeholder to the current slide." />
+        <ov:String id="Commands.ConfigureDescription" DefaultValue="Open the control panel to map slides to surveys." />
+        <ov:String id="Commands.RefreshDescription" DefaultValue="Force all live results instances to refresh immediately." />
+        <ov:String id="GetStarted.Description" DefaultValue="Use the ribbon buttons to insert live results and configure slide mappings." />
+        <ov:String id="GetStarted.LearnMoreUrl" DefaultValue="https://agenticfeedback.app" />
+      </ov:LongStrings>
+    </ov:Resources>
+  </VersionOverrides>
+</OfficeApp>
